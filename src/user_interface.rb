@@ -15,6 +15,6 @@ class UserInterface < Gosu::Window
   end
 
   def draw
-    @engine.writer.draw "Yolocaust", 245, 10, 0
+    @engine.background_image.draw 0, 0, 0, 0.444, 0.635
   end
 end
