@@ -6,7 +6,7 @@ class GameEngine
 
   def initialize
     @background_image = Gosu::Image.new("assets/images/background.jpg", tileable: false)
-    @writer = Gosu::Font.new(72)
+    @writer = Gosu::Font.new(72, name: "assets/fonts/Capture_it.ttf")
   end
 
   def update

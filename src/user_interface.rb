@@ -15,6 +15,7 @@ class UserInterface < Gosu::Window
   end
 
   def draw
-    @engine.background_image.draw 0, 0, 0, 0.444, 0.635
+    @engine.background_image.draw 0, 0, 0, 0.444, 0.435
+    @engine.writer.draw "Press Enter to Play", 145, 390, 0, 0.75, 0.5, Gosu::Color::WHITE
   end
 end
