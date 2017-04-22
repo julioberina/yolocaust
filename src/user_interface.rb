@@ -22,6 +22,10 @@ class UserInterface < Gosu::Window
     end
   end
 
+  def button_up id
+    @engine.button_up id
+  end
+
   private
   # Methods that draw specific entities to screen based on the scene
 

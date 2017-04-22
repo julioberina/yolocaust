@@ -3,6 +3,7 @@
 
 module Scene
   TITLE = 1
+  MAIN = 3
 end
 
 class GameEngine
@@ -19,5 +20,14 @@ class GameEngine
   def update
     # Update game entities
     @frame = (@frame + 1) % 60
+  end
+
+  def button_up id
+    if id == Gosu::KbReturn or id == Gosu::KbEnter
+      case @scene
+      when Scene::TITLE
+        @scene = Scene::MAIN
+      end
+    end
   end
 end
