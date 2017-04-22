@@ -7,6 +7,7 @@ class UserInterface < Gosu::Window
     super 800, 600
     self.caption = "Yolocaust"
     @engine = GameEngine.new
+    @engine.background_music.play true
   end
 
   # Let GameEngine run game logic
