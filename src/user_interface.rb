@@ -30,7 +30,9 @@ class UserInterface < Gosu::Window
 
     # blinking effect
     if @engine.frame < 30
-      @engine.writer.draw "Press Enter to Play", 145, 390, 0, 0.75, 0.5, Gosu::Color::WHITE
+      @engine.writer.draw "Press Enter to Play", 155, 390, 0, 0.75, 0.5, Gosu::Color::WHITE
     end
   end
+
+
 end
