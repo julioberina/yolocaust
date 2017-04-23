@@ -17,5 +17,7 @@ class NyanCat < Character
     @frame = (@frame + 1) % 32 # change cat picture
     @x += @dx
     @y += @dy
+    @dy = 0 if @y <= 0 or @y >= 550
+    @dx = 0 if @x <= 0 or @x >= 200
   end
 end

@@ -34,16 +34,22 @@ class GameEngine
   def button_up id
     if id == Gosu::KbReturn or id == Gosu::KbEnter
       @scene = Scene::MAIN if @scene == Scene::TITLE
-    elsif id == Gosu::KbS or id == Gosu::KbW
+    elsif id == Gosu::KbS or id == Gosu::KbW or id == Gosu::KbDown or id == Gosu::KbUp
       @cat.dy = 0 if @scene == Scene::MAIN
+    elsif id == Gosu::KbA or id == Gosu::KbD or id == Gosu::KbLeft or id == Gosu::KbRight
+      @cat.dx = 0 if @scene == Scene::MAIN
     end
   end
 
   def button_down id
-    if id == Gosu::KbS
+    if id == Gosu::KbS or id == Gosu::KbDown
       (@cat.dy = 5 unless @cat.dy == 5) if @scene == Scene::MAIN
-    elsif id == Gosu::KbW
+    elsif id == Gosu::KbW or id == Gosu::KbUp
       (@cat.dy = -5 unless @cat.dy == -5) if @scene == Scene::MAIN
+    elsif id == Gosu::KbA or id == Gosu::KbLeft
+      (@cat.dx = -5 unless @cat.dx == -5) if @scene == Scene::MAIN
+    elsif id == Gosu::KbD or id == Gosu::KbRight
+      (@cat.dx = 5 unless @cat.dx == 5) if @scene == Scene::MAIN
     end
   end
 end
