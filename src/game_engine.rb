@@ -31,7 +31,7 @@ class GameEngine
   def update
     # Update game entities
     @frame = (@frame + 1) % 60
-    @bframe = (@bframe + 1) % 60
+    @bframe = (@bframe + 1) % 58
     if @frame >= 300 then @frame = 0 end
     if @bframe >= 300 then @bframe = 0 end
     @cat.update if @scene == Scene::MAIN
@@ -42,7 +42,7 @@ class GameEngine
       if @scene == Scene::TITLE
         @scene = Scene::MAIN
         @background_image = []
-        30.times do |i|
+        29.times do |i|
           @background_image << Gosu::Image.new("assets/images/frame_#{i}_delay-0.03s.png")
         end
       end

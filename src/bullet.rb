@@ -21,7 +21,7 @@ class Bullet < Entity
     if @orientation == :right
       @dx = 10
     elsif @orientation == :left
-      @dx = -10
+      @dx = -20
     end
   end
 
