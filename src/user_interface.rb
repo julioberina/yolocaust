@@ -20,7 +20,7 @@ class UserInterface < Gosu::Window
     when Scene::TITLE
       title_screen
     when Scene::MAIN
-      story1_screen
+      main_screen
     end
   end
 
@@ -44,9 +44,17 @@ class UserInterface < Gosu::Window
     end
   end
 
-  def story1_screen
+  def main_screen
+    @engine.background_image[@engine.bframe / 3].draw 0, 0, 0, 1.333, 2
     @engine.cat.pic[@engine.cat.frame / 4].draw(
     @engine.cat.x, @engine.cat.y, @engine.cat.z,
     @engine.cat.scale_x, @engine.cat.scale_y) # Draw the cat
+
+    # Draw the cat's bullets if there are any
+    unless @engine.cat.bullets.empty?
+      @engine.cat.bullets.each do |bullet|
+        bullet.pic.draw bullet.x, bullet.y, 0
+      end
+    end
   end
 end
