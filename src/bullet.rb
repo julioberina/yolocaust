@@ -9,7 +9,6 @@ class Bullet < Entity
     @y = y
     @dx = 0
     @dy = 0
-    @pic = Gosu::Image.new("assets/images/dabbullet.png")
   end
 
   def update
@@ -17,9 +16,14 @@ class Bullet < Entity
     @y += @dy
   end
 
-  def shoot
+  def shoot(charge = 0)
     if @orientation == :right
       @dx = 10
+      if charge >= 179
+        # Load charged bullet image
+      else
+        @pic = Gosu::Image.new("assets/images/dabbullet.png")
+      end
     elsif @orientation == :left
       @dx = -20
     end

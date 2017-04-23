@@ -52,7 +52,8 @@ class GameEngine
       @cat.dx = 0 if @scene == Scene::MAIN
     elsif id == Gosu::KbSpace
       bullet = Bullet.new(:right, @cat.x + 125, @cat.y - 16)
-      @cat.bullets << bullet
+      @cat.bullets << bullet.tap { |b| b.shoot(@cat.charge) }
+      @cat.reset_charge
     end
   end
 
@@ -65,6 +66,8 @@ class GameEngine
       (@cat.dx = -5 unless @cat.dx == -5) if @scene == Scene::MAIN
     elsif id == Gosu::KbD or id == Gosu::KbRight
       (@cat.dx = 5 unless @cat.dx == 5) if @scene == Scene::MAIN
+    elsif id == Gosu::KbSpace
+      @cat.dc = 1
     end
   end
 end
