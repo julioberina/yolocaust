@@ -45,7 +45,7 @@ class UserInterface < Gosu::Window
   end
 
   def main_screen
-    @engine.background_image[@engine.bframe / 3].draw 0, 0, 0, 1.333, 2
+    @engine.background_image[@engine.bframe / 2].draw 0, 0, 0, 1.6, 1.2
     @engine.cat.pic[@engine.cat.frame / 4].draw(
     @engine.cat.x, @engine.cat.y, @engine.cat.z,
     @engine.cat.scale_x, @engine.cat.scale_y) # Draw the cat
