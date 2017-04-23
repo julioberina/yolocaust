@@ -53,8 +53,8 @@ class UserInterface < Gosu::Window
     # Draw the cat's bullets if there are any
     unless @engine.cat.bullets.empty?
       @engine.cat.bullets.each do |bullet|
-        if @engine.cat.charged?
-          # draw charged bullet
+        if bullet.pic.is_a? Array
+          bullet.pic[bullet.c_frame / 10].draw(bullet.x - 300, bullet.y, 0)
         else
           bullet.pic.draw bullet.x, bullet.y, 0
         end
