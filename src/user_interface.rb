@@ -19,11 +19,17 @@ class UserInterface < Gosu::Window
     case @engine.scene
     when Scene::TITLE
       title_screen
+    when Scene::MAIN
+      story1_screen
     end
   end
 
   def button_up id
     @engine.button_up id
+  end
+
+  def button_down id
+    @engine.button_down id
   end
 
   private
@@ -38,5 +44,9 @@ class UserInterface < Gosu::Window
     end
   end
 
-
+  def story1_screen
+    @engine.cat.pic[@engine.cat.frame / 4].draw(
+    @engine.cat.x, @engine.cat.y, @engine.cat.z,
+    @engine.cat.scale_x, @engine.cat.scale_y) # Draw the cat
+  end
 end
